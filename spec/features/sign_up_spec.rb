@@ -7,6 +7,7 @@ describe "Sign Up" do
       fill_in "Email", :with => "email@person.com"
       fill_in "Password", :with => "password"
       fill_in "Password Confirmation", :with => "password"
+      fill_in "Firstname", :with => "太郎"
       click_button "Create"
       page.should have_content("You have signed up successfully.")
       Spree::User.count.should == 1
