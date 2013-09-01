@@ -19,6 +19,7 @@ describe "Sign Up" do
       fill_in "Email", :with => "email@person.com"
       fill_in "Password", :with => "password"
       fill_in "Password Confirmation", :with => ""
+      fill_in "test", :with => "test"
       click_button "Create"
       page.should have_css("#errorExplanation")
       Spree::User.count.should == 0
