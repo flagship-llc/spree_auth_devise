@@ -1,0 +1,48 @@
+ja:
+  devise:
+      confirmations:
+        confirmed: あなたのアカウントは確認されました。既にサインインされています。
+        send_instructions: 数分以内に、アカウントの確認方法を記載したメール送りいたします。
+      failure:
+        inactive: アカウントはまだ有効化されていません。
+        invalid: メールアドレスかパスワードが不適切です。
+        invalid_token: 認証用トークンが不適切です。
+        locked: あなたのアカウントはロックされています。
+        timeout: セッションが時間切れになりました。もう一度ログインしてください。
+        unauthenticated: 次のページに進む前に、ログインしておく必要があります。
+        unconfirmed: 次のページに進む前に、アカウントを確認済みにしておく必要があります。
+      mailer:
+        confirmation_instructions:
+          subject: アカウントの確認方法
+        reset_password_instructions:
+          subject: パスワードのリセット方法
+        unlock_instructions:
+          subject: ロックの解除方法
+      oauth_callbacks:
+        failure: 認証できませんでした。
+        success: アカウントが認証されました。
+      unlocks:
+        send_instructions: 数分以内に、アカウントのロック解除方法を示したメールをお送りいたします。
+        unlocked: 正しくアカウントロック解除がされました。既にログイン済みの状態になっています。
+      user_passwords:
+        spree_user:
+          cannot_be_blank: パスワード必須入力項目です。
+          send_instructions: 数分以内に、パスワードのリセット方法を示したメールをお送りいたします。
+          updated: 正しくパスワードがリセットがされました。既にログイン済みの状態になっています。
+      user_registrations:
+        spree_user:
+          destroyed: アカウント登録がキャンセルされました。またのご利用をお待ちしております。
+          inactive_signed_up: ただしくアカウント登録がされました。ただし、なんらかの理由により、サインインできていません。
+          signed_up: 正しくアカウント登録がされました。
+          updated: 正しくアカウント情報が更新されました。
+      user_sessions:
+        signed_in: ログインしました。
+        signed_out: ログアウトしました。
+    errors:
+      messages:
+        already_confirmed: 既に確認済みとなっています。
+        not_found: 見つかりません。
+        not_locked: ロックになっていません。
+        not_saved:
+          one: ! 'エラーによって、情報は保存されませんでした。'
+          other: ! 'エラーによって、情報は保存されませんでした。'
