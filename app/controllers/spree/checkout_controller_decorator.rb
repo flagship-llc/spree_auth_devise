@@ -10,6 +10,25 @@ Spree::CheckoutController.class_eval do
   end
 
   def update_registration
+    # hack - bypass this stuff and just update the e-mail address if that's what we want to do.
+    if params[:type_of_reg] == 'guest_checkout' and current_order.state == 'address'
+      current_order.state = 'cart'
+      current_order.update_attribute :state, 'cart'
+
+      current_order.reload
+
+      if current_order.update_attributes(params[:order])
+        current_order.state = 'address'
+        current_order.update_attribute :state, 'address'
+
+        redirect_to checkout_state_path(current_order.state)
+      else
+        render 'registration'
+      end
+
+      return
+    end
+
     fire_event("spree.user.signup", :order => current_order)
     # hack - temporarily change the state to something other than cart so we can validate the order email address
     current_order.state = current_order.checkout_steps.first
